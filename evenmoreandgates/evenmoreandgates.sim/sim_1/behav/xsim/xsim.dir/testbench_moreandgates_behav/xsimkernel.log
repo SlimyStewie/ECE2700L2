@@ -1,0 +1,4 @@
+Running: xsim.dir/testbench_moreandgates_behav/xsimk -simmode gui -wdb testbench_moreandgates_behav.wdb -simrunnum 0 -socket 48131
+Design successfully loaded
+Design Loading Memory Usage: 392904 KB (Peak: 393024 KB)
+Design Loading CPU Usage: 1130 ms

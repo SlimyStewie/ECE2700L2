@@ -24,52 +24,18 @@ module testbench_moreandgates(
 
     );
     
-     reg in1, in2, in3, in4;
+     reg in1, in2, in3, in4, clk;
     wire out1, out2;
 
-    // Instantiate the top-level module
-    moreandgates DUT (
-        .F1(out1),
-        .F2(out2),
-        .A(in1),
-        .B(in2),
-        .C(in3),
-        .D(in4)
-    );
+    moreandgates DUT (.A(in1), .B(in2), .C(in3), .D(in4), .F1(out1), .F2(out2));
 
     initial begin
-        in1 = 0; in2 = 0; in3 = 0; in4 = 0;
-        #10
-        in1 = 1; in2 = 0; in3 = 0; in4 = 0;
-        #10
-        in1 = 0; in2 = 1; in3 = 0; in4 = 0;
-        #10
-        in1 = 1; in2 = 1; in3 = 0; in4 = 0;
-        #10
-        in1 = 0; in2 = 0; in3 = 1; in4 = 0;
-        #10
-        in1 = 1; in2 = 0; in3 = 1; in4 = 0;
-        #10
-        in1 = 0; in2 = 1; in3 = 1; in4 = 0;
-        #10
-        in1 = 1; in2 = 1; in3 = 1; in4 = 0;
-        #10
-        in1 = 0; in2 = 0; in3 = 0; in4 = 1;
-        #10
-        in1 = 1; in2 = 0; in3 = 0; in4 = 1;
-        #10
-        in1 = 0; in2 = 1; in3 = 0; in4 = 1;
-        #10
-        in1 = 1; in2 = 1; in3 = 0; in4 = 1;
-        #10
-        in1 = 0; in2 = 0; in3 = 1; in4 = 1;
-        #10
-        in1 = 1; in2 = 0; in3 = 1; in4 = 1;
-        #10
-        in1 = 0; in2 = 1; in3 = 1; in4 = 1;
-        #10
-        in1 = 1; in2 = 1; in3 = 1; in4 = 1;
-        #10
-        $finish;
+        in1 = 0; in2 = 0; in3 = 0; in4 = 0; clk = 0;
+        forever #10 clk = ~clk;
     end
+
+    always @(posedge clk) begin
+        {in1, in2, in3, in4} = {in1, in2, in3, in4} + 1;
+    end
+
 endmodule

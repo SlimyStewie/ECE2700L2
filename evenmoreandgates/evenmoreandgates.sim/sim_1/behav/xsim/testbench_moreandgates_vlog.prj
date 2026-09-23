@@ -1,7 +1,9 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
 "../../../../evenmoreandgates.srcs/sources_1/new/alwaysannd.v" \
-"../../../../evenmoreandgates.srcs/sim_1/new/testbench_alwaysand.v" \
+"../../../../evenmoreandgates.srcs/sources_1/imports/new/continuousand.v" \
+"../../../../evenmoreandgates.srcs/sources_1/new/moreandgates.v" \
+"../../../../evenmoreandgates.srcs/sim_1/new/testbench_moreandgates.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
