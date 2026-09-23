@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1790187332" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/continuousand.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="continuousand_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="continuousand.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="continuousand_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="continuousand_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="continuousand_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="continuousand.vds"/>
-  <File Type="REPORTS-TCL" Name="continuousand_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="continuousand_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="continuousand.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1790190236" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/continuousand.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="moreandgates_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="moreandgates.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="moreandgates_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="moreandgates_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="moreandgates_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="moreandgates.vds"/>
+  <File Type="REPORTS-TCL" Name="moreandgates_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="moreandgates_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="moreandgates.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/alwaysannd.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/new/continuousand.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../MoreAndGates/MoreAndGates.srcs/sources_1/new/continuousand.v"/>
@@ -20,9 +27,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/alwaysannd.v">
+    <File Path="$PSRCDIR/sources_1/new/moreandgates.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -30,7 +36,8 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="continuousand"/>
+      <Option Name="TopModule" Val="moreandgates"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">

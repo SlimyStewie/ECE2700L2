@@ -34,13 +34,13 @@ module testbench_alwaysannd(
   );
 
     initial begin
-        in1 = 0; in2 = 0;
+        A = 0; B = 0;
         #10
-        in1 = 1; in2 = 0;
+        A = 1; B = 0;
         #10
-        in1 = 0; in2 = 1;
+        A = 0; B = 1;
         #10
-        in1 = 1; in2 = 1;
+        A = 1; B = 1;
         #10
         $finish;
     end

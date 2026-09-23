@@ -21,7 +21,7 @@
 
 
 module alwaysannd(
-    output out,
+    output reg out,
     input A,
     input B
 );
